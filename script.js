@@ -131,7 +131,7 @@ function folderFromPath(path){
 function parseCSV(text){
   const rowsRaw = [];
   let i=0, field="", row=[], inQuotes=false;
-  text = text.replace(/\\r\\n/g,"\\n");
+text = text.replace(/\r\n/g,"\n").replace(/\r/g,"\n");
   while(i < text.length){
     const ch = text[i];
     if(inQuotes){
